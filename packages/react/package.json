@@ -1,0 +1,58 @@
+{
+  "name": "@uploadstuff/react",
+  "version": "0.0.1",
+  "description": "",
+  "exports": {
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/index.css",
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./hooks": {
+      "import": "./dist/hooks.mjs",
+      "types": "./dist/hooks.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint *.ts* --max-warnings 0",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "dev": "wait-on ../uploadthing/dist/server.mjs && tsup --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dropzone": "^14.2.3",
+    "uploadthing": "3.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "autoprefixer": "^10.4.14",
+    "react-dropzone": "^14.2.3",
+    "tailwindcss": "^3.3.2",
+    "tsup": "^6.7.0",
+    "uploadstuff": "workspace:^",
+    "wait-on": "^7.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3"
+  }
+}

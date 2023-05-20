@@ -1,0 +1,50 @@
+{
+  "name": "uploadstuff",
+  "version": "0.0.2",
+  "exports": {
+    "./package.json": "./package.json",
+    "./client": {
+      "import": "./dist/client.mjs",
+      "types": "./dist/client.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server.mjs",
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.mjs"
+    },
+    "./next": {
+      "import": "./dist/next.mjs",
+      "types": "./dist/next.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:dev": "tsup --watch",
+    "typecheck": "",
+    "lint": "eslint *.ts* --max-warnings 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^13.4.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "eslint": "^7.32.0",
+    "tsup": "^6.7.0"
+  }
+}
